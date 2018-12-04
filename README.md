@@ -1,7 +1,10 @@
 # React Component Generation Extension for VSCode
+(**vscode-react-component-generator**)
+
 [![Version](https://vsmarketplacebadge.apphb.com/version/abdullahceylan.vscode-react-component-generator.svg)](https://marketplace.visualstudio.com/items?itemName=abdullahceylan.vscode-react-component-generator)
 [![Installs](https://vsmarketplacebadge.apphb.com/installs/abdullahceylan.vscode-react-component-generator.svg)](https://marketplace.visualstudio.com/items?itemName=abdullahceylan.vscode-react-component-generator)
-(**vscode-react-component-generator**)
+[![The MIT License](https://flat.badgen.net/badge/license/MIT/orange)](http://opensource.org/licenses/MIT)
+[![GitHub](https://flat.badgen.net/github/release/abdullahceylan/vscode-react-component-generator)](https://github.com/abdullahceylan/vscode-react-component-generator/releases)
 
 ## Description
 The extension automatically creates folder for react component containing :
