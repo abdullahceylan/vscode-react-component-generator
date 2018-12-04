@@ -48,9 +48,11 @@ You can access to the extension's settings through VSCode settings. You can cust
             "create": true,
             "extension": "jsx",
         },
-        "css": {
+        "style": {
             "create": true,
-            "extension": "styles.js"
+            "type": "styled",
+            "suffix": ".styles",
+            "extension": "js"
         },
         "index": {
             "create": true,
