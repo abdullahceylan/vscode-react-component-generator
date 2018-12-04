@@ -1,0 +1,31 @@
+import React from {quotes}react{quotes};
+import PropTypes from {quotes}prop-types{quotes};
+import { connect } from {quotes}react-redux{quotes};
+//import { Test } from './{componentName}.styles';
+
+const {componentName} = (props) => (
+  <div className="{componentName}Wrapper">
+    Test content
+  </div>
+);
+
+{componentName}.propTypes = {
+  // bla: PropTypes.string,
+};
+
+{componentName}.defaultProps = {
+  // bla: 'test',
+};
+
+const mapStateToProps = state => ({
+  // blabla: state.blabla,
+});
+
+const mapDispatchToProps = dispatch => ({
+  // fnBlaBla: () => dispatch(action.name()),
+});
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps,
+)({componentName});

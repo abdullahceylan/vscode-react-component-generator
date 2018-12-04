@@ -1,0 +1,3 @@
+import {componentName} from {quotes}./{componentName}{quotes};
+
+export default {componentName};

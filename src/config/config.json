@@ -1,0 +1,22 @@
+{
+    "global": {
+        "quotes": "single",
+        "generateFolder": true
+    },
+    "files": {
+        "component": {
+            "create": true,
+            "extension": "jsx"
+        },
+        "style": {
+            "create": true,
+            "type": "styled",
+            "suffix": ".styles",
+            "extension": "js"
+        },
+        "index": {
+            "create": true,
+            "extension": "js"
+        }
+    }
+}

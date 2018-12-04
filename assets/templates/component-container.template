@@ -1,0 +1,47 @@
+import React, { PureComponent } from {quotes}react{quotes};
+import PropTypes from {quotes}prop-types{quotes};
+//import { Test } from {quotes}./{componentName}.styles{quotes};
+
+class {componentName} extends PureComponent { 
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      demoState: 0,
+    };
+  }
+
+  componentWillMount = () => {
+    console.log('{componentName} will mount');
+  }
+
+  componentDidMount = () => {
+    console.log('{componentName} mounted');
+  }
+
+  componentWillReceiveProps = (nextProps) => {
+    console.log('{componentName} will receive props', nextProps);
+  }
+  
+  componentWillUnMount = () => {
+    console.log('{componentName} will unmount');
+  }
+
+  render () {
+    return (
+      <div className="{componentName}Wrapper">
+        Test content
+      </div>
+    );
+  }
+}
+
+{componentName}.propTypes = {
+  // bla: PropTypes.string,
+};
+
+{componentName}.defaultProps = {
+  // bla: 'test',
+};
+
+export default {componentName};
