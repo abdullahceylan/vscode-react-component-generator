@@ -6,6 +6,7 @@ import { pascalCase } from 'change-case';
 import { Observable } from 'rxjs';
 import FileInterface from './interfaces/files.interface';
 import GlobalInterface from './interfaces/global.interface';
+
 // import { Config as ConfigInterface } from './config.interface';
 import {
     IndexInterface,
@@ -13,7 +14,7 @@ import {
 } from './interfaces/types';
 
 export class FileHelper {
-    private static sourceDir: string = path.join(__dirname, '../../src');
+    private static rootDir: string = path.join(__dirname, '../..');
     private static assetRootDir: string = path.join(__dirname, '../../assets');
 
     private static createFile = <(file: string, data: string) => Observable<{}>>Observable.bindNodeCallback(fse.outputFile);
@@ -110,7 +111,7 @@ export class FileHelper {
     };
 
     public static getDefaultConfig(): any {
-        let content = fs.readFileSync( this.sourceDir + '/config/config.json' ).toString();
+        let content = fs.readFileSync( this.rootDir + '/config/config.json' ).toString();
         content = content.replace(/\${workspaceFolder}/g, workspace.rootPath);
         return JSON.parse(content);
     }
