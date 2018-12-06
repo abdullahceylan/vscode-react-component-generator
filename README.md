@@ -5,6 +5,7 @@
 [![Installs](https://vsmarketplacebadge.apphb.com/installs/abdullahceylan.vscode-react-component-generator.svg)](https://marketplace.visualstudio.com/items?itemName=abdullahceylan.vscode-react-component-generator)
 [![The MIT License](https://flat.badgen.net/badge/license/MIT/orange)](http://opensource.org/licenses/MIT)
 [![GitHub](https://flat.badgen.net/github/release/abdullahceylan/vscode-react-component-generator)](https://github.com/abdullahceylan/vscode-react-component-generator/releases)
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fabdullahceylan%2Fvscode-react-component-generator.svg?type=shield)](https://app.fossa.io/projects/git%2Bgithub.com%2Fabdullahceylan%2Fvscode-react-component-generator?ref=badge_shield)
 
 ## Description
 The extension automatically creates folder for react component containing :
@@ -71,3 +72,7 @@ You can access to the extension's settings through VSCode settings. You can cust
 ## Bugs
 
 Please report [here](https://github.com/abdullahceylan/vscode-react-component-generator/issues)
+
+
+## License
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fabdullahceylan%2Fvscode-react-component-generator.svg?type=large)](https://app.fossa.io/projects/git%2Bgithub.com%2Fabdullahceylan%2Fvscode-react-component-generator?ref=badge_large)
