@@ -26,6 +26,8 @@
     "vscode": "^1.29.0"
   },
   "categories": [
+    "Programming Languages",
+    "Snippets",
     "Other"
   ],
   "keywords": [
@@ -50,9 +52,71 @@
       "type": "object",
       "title": "AC React Component Generator",
       "properties": {
-        "AC.ReactComponentGenerator.config": {
-          "type": "object",
-          "description": "vscode-react-component-generator configuration object. See: https://github.com/abdullahceylan/vscode-react-component-generator/blob/master/README.md for more information."
+        "ACReactComponentGenerator.global.quotes": {
+          "type": "string",
+          "enum": [
+            "single",
+            "double"
+          ],
+          "default": "single",
+          "description": "Options: `single` or `double` Result: `'`  or  `\"`"
+        },
+        "ACReactComponentGenerator.global.generateFolder": {
+          "type": "boolean",
+          "default": true,
+          "description": "Generate or not separate folder for newly created component"
+        },
+        "ACReactComponentGenerator.global.lifecycleType": {
+          "type": "string",
+          "default": "legacy",
+          "enum": [
+            "legacy",
+            "reactv16"
+          ],
+          "description": "The lifecycle type of generated component. `legacy` is contains componentWillReceiveProps, componentWillMount etc."
+        },
+        "ACReactComponentGenerator.mainFile.create": {
+          "type": "boolean",
+          "default": true,
+          "description": "Weather to generate component's main file or not. e.g.: ComponentName.(extension)"
+        },
+        "ACReactComponentGenerator.mainFile.extension": {
+          "type": "string",
+          "default": "jsx",
+          "description": "The extension of generated component file"
+        },
+        "ACReactComponentGenerator.styleFile.create": {
+          "type": "boolean",
+          "default": true,
+          "description": "Weather to generate component's style file or not. e.g.: ComponentName.(extension)"
+        },
+        "ACReactComponentGenerator.styleFile.type": {
+          "type": "string",
+          "enum": [
+            "styled-components (.js)",
+            "emotion (.js)",
+            "standard (.css)",
+            "sass (.sass)",
+            "less (.less)"
+          ],
+          "default": "styled-components (.js)",
+          "description": "The type of stylesheet file to create"
+        },
+
+        "ACReactComponentGenerator.styleFile.suffix": {
+          "type": "string",
+          "default": ".styles",
+          "description": "The suffix to add to the end of the stylesheet filename. Default: ComponentName.styles.(extension)"
+        },
+        "ACReactComponentGenerator.indexFile.create": {
+          "type": "boolean",
+          "default": true,
+          "description": "Weather to generate component's index file or not. e.g.: index.(extension)"
+        },
+        "ACReactComponentGenerator.indexFile.extension": {
+          "type": "string",
+          "default": "js",
+          "description": "The extension of generated component index file"
         }
       }
     },

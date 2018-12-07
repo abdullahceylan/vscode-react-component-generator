@@ -4,7 +4,6 @@
 import { ExtensionContext, workspace, window, commands } from 'vscode';
 import { paramCase } from 'change-case';
 import { Observable } from 'rxjs';
-import { assign } from "lodash";
 
 import { FileHelper, logger } from './helpers';
 import { Config as ConfigInterface } from './config.interface';
@@ -16,15 +15,6 @@ const TEMPLATE_SUFFIX_SEPERATOR = '-';
 export function activate(context: ExtensionContext) {
 
     const createComponent = (uri, suffix: string = '') => {
-        let configPrefix: String = 'AC.ReactComponentGenerator';
-        let defaultConfig: ConfigInterface = FileHelper.getDefaultConfig();
-        let userConfig: ConfigInterface = <ConfigInterface>workspace.getConfiguration((configPrefix + '.config'));
-        let config: ConfigInterface;
-
-        if (userConfig) {
-            config = assign(config, defaultConfig, userConfig) as ConfigInterface;
-        }
-
         // Display a dialog to the user
         let enterComponentNameDialog$ = Observable.from(
             window.showInputBox(
@@ -38,12 +28,12 @@ export function activate(context: ExtensionContext) {
                     throw new Error('Component name can not be empty!');
                 }
                 let componentName = paramCase(val);
-                let componentDir = FileHelper.createComponentDir(uri, componentName, config.global);
+                let componentDir = FileHelper.createComponentDir(uri, componentName);
 
                 return Observable.forkJoin(
-                    FileHelper.createComponent(componentDir, componentName, config.global, config.files, suffix),
-                    FileHelper.createIndexFile(componentDir, componentName, config.global, config.files.index),
-                    FileHelper.createCSS(componentDir, componentName, config.global, config.files.style),
+                    FileHelper.createComponent(componentDir, componentName, suffix),
+                    FileHelper.createIndexFile(componentDir, componentName),
+                    FileHelper.createCSS(componentDir, componentName),
                 );
             })
             .concatMap(result => Observable.from(result))

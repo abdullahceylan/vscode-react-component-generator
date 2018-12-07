@@ -1,4 +1,5 @@
 export default interface GlobalInterface {
     quotes?: string,
-    generateFolder?: boolean
+    generateFolder?: boolean,
+    lifecycleType?: string,
 }

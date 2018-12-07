@@ -4,8 +4,8 @@ import {
     ComponentInterface,
  } from './types';
  
-export default interface FileInterface {
-    component: ComponentInterface,
-    style: CSSInterface,
-    index: IndexInterface,
-}
+export {
+    IndexInterface,
+    CSSInterface,
+    ComponentInterface,
+};
