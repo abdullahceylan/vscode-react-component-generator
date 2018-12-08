@@ -126,7 +126,6 @@ export class FileHelper {
 }
 
 export function logger(type: 'success'|'warning'|'error', msg: string = '') {
-    console.log(msg);
     switch (type) {
     case 'success':
         return window.setStatusBarMessage(`Success: ${msg}`, 5000);
@@ -151,8 +150,6 @@ export function getStyleSheetExtTemplate() {
     template: 'css.template',
   };
 
-  console.log('configuredView', configuredView);
-
 	switch (configuredView) {
 		case 'styled-components (.js)':
       styleTemplate = { ext: 'js', template: 'css-styled.template' };
@@ -172,8 +169,6 @@ export function getStyleSheetExtTemplate() {
 }
 
 export function removeBetweenTags(remainTag, removedtag, content) {
-	console.log("​removeBetweenTags -> removedtag", removedtag)
-	console.log("​removeBetweenTags -> remainTag", remainTag)
   const escapeRegExp = s => s.replace(/[-\/\\^$*+?.()|[\]{}]/g, "\\$&");
   const regexPattern = RegExp(`${escapeRegExp(`<${removedtag}>`)}([\\S\\s]+?)${escapeRegExp(`</${removedtag}>`)}`, "gi");
   const removeOnlyTagsPattern = new RegExp(`<(${escapeRegExp(remainTag)}|/${escapeRegExp(remainTag)})[^>]{0,}>`, "gi");

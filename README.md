@@ -12,6 +12,20 @@ The extension automatically creates folder for react component containing :
 - `ComponentName.jsx`
 - `ComponentName.styles.js` (for `styled`-component or `emotion` option)
 - `ComponentName.css` (for `standard` style option)
+- `ComponentName.sass` (for `sass` style option)
+- `ComponentName.less` (for `less` style option)
+
+## Installation
+
+Install through VS Code extensions. Search for `VSCode React Component Generator`
+
+[Visual Studio Code Market Place: VSCode React Component Generator](https://marketplace.visualstudio.com/items?itemName=abdullahceylan.vscode-react-component-generator)
+
+Can also be installed in VS Code: Launch VS Code Quick Open (Ctrl+P), paste the following command, and press enter.
+
+```
+ext install abdullahceylan.vscode-react-component-generator
+```
 
 ## Usage
 
@@ -29,44 +43,57 @@ The extension automatically creates folder for react component containing :
 
 ![Container component with redux](assets/images/vscode-3.gif)
 
+![Extension settings](assets/images/vscode-settings.png)
+
 ## Configuration
 You can access to the extension's settings through VSCode settings. You can customize:
 
-- **global** (`object`):
-    - **quotes** (string) - Options: `single` or `double` Result: `'`  or  `"`
-    - **generateFolder** (`bool`) - generate or not separate folder for newly created component
-- **create** (`bool`) - weather to generate this file or not
-- **type** (`string`) - only for `style` file. Options: `standard`, `styled` or `emotion`
-- **suffix** (`string`) - only for `style` file and it's optional. When you specified a suffix, style file name will be ComponentName`suffix`.`extension` Default: `.styles`
-- **extension** (`string`) - extension of generated file (e.g. you might want to change stylesheet file extension of styles, replace "js" with just plain "css")
 
-```json
-{
-    "global": {
-        "quotes": "single",
-        "generateFolder": true,
-    },
-    "files": {
-        "component": {
-            "create": true,
-            "extension": "jsx",
-        },
-        "style": {
-            "create": true,
-            "type": "styled",
-            "suffix": ".styles",
-            "extension": "js"
-        },
-        "index": {
-            "create": true,
-            "extension": "js"
-        }
-    }
-}
-```
+#### `ACReactComponentGenerator.global.generateFolder` (default: `true`)
+Generate or not separate folder for newly created component
+
+#### `ACReactComponentGenerator.global.quotes` (default: `single`)
+Controls the quotes for the imports in the files. Valid options:
+ - "single" - e.g.: import React from `'`react`'`
+ - "double"  - e.g.: import React from `"`react`"`
+  
+#### `ACReactComponentGenerator.global.lifecycleType` (default: `legacy`)
+The lifecycle type of generated component. Valid options:
+ - "legacy" - Contains `componentWillReceiveProps`, `componentWillMount`
+ - "reactv16"  - Contains `getSnapshotBeforeUpdate`, `getDerivedStateFromProps`, `getDerivedStateFromError`, `componentDidCatch` and removes `componentWillReceiveProps` and `componentWillMount`
+
+#### `ACReactComponentGenerator.indexFile.create` (default: `true`)
+Weather to generate component's index file or not.
+
+#### `ACReactComponentGenerator.indexFile.extension` (default: `js`)
+The extension of generated component index file. e.g.: index.(`extension`)
+
+#### `ACReactComponentGenerator.mainFile.create` (default: `true`)
+Weather to generate component's main file or not.
+
+#### `ACReactComponentGenerator.mainFile.extension` (default: `jsx`)
+The extension of generated component file. e.g.: ComponentName.(`extension`)
+
+#### `ACReactComponentGenerator.styleFile.create` (default: `true`)
+Weather to generate component's stylesheet file or not.
+
+#### `ACReactComponentGenerator.styleFile.extension` (default: `jsx`)
+The extension of generated stylesheet file. e.g.: ComponentName.styles.(`extension`)
+
+#### `ACReactComponentGenerator.styleFile.suffix` (default: `.styles`)
+The suffix to add to the end of the stylesheet filename. Default: ComponentName`.styles`.(extension)
+
+#### `ACReactComponentGenerator.styleFile.type` (default: `styled-components`)
+The type of stylesheet file to create. Valid options:
+- "styled-components (.js)" - ComponentName.styles.`js`
+- "emotion (.js)" - ComponentName.styles.`js`
+- "standard (.css)" - ComponentName.styles.`css`
+- "sass (.sass)" - ComponentName.styles.`sass`
+- "less (.less)" - ComponentName.styles.`less`
+
 ### Changelog
-#### 0.0.1 (2018-12-02)
-- Initial release
+
+#### [Click here](CHANGELOG.md)
 
 ## Bugs
 
