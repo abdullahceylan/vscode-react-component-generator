@@ -8,14 +8,14 @@ class {componentName} extends PureComponent {
     super(props);
 
     this.state = {
-      demoState: 0,
+      hasError: false,
     };
   }
-
+<legacy>
   componentWillMount = () => {
     console.log('{componentName} will mount');
   }
-
+</legacy>
   componentDidMount = () => {
     console.log('{componentName} mounted');
   }
@@ -23,18 +23,21 @@ class {componentName} extends PureComponent {
   componentWillReceiveProps = (nextProps) => {
     console.log('{componentName} will receive props', nextProps);
   }
-</legacy>
-<reactv16>
-  getDerivedStateFromProps = (nextProps, prevState) => {
-    console.log('{componentName} getDerivedStateFromProps', nextProps, prevState);
-  }
-</reactv16>
-<legacy>
+
   componentWillUpdate = (nextProps, nextState) => {
     console.log('{componentName} will update', nextProps, nextState);
   }
 </legacy>
 <reactv16>
+  static getDerivedStateFromError(error) {
+    // getDerivedStateFromError -> Update state so the next render will show the fallback UI.
+    return { hasError: true };
+  }
+
+  componentDidCatch(error, info) {
+    // You can also log the error to an error reporting service
+  }
+
   getSnapshotBeforeUpdate = (prevProps, prevState) => {
     console.log('{componentName} getSnapshotBeforeUpdate', prevProps, prevState);
   }
@@ -48,6 +51,9 @@ class {componentName} extends PureComponent {
   }
 
   render () {
+    if (this.state.hasError) {
+      return <h1>Something went wrong.</h1>;
+    }
     return (
       <div className="{componentName}Wrapper">
         Test content
