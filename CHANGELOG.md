@@ -10,7 +10,7 @@
 ### New Features
 
 * Added **lifecycle** type option. Now you can choose whether to create a component with legacy lifecycle or React v16 lifecycles
-* Added **SASS** and **LESS** css extension option.
+* Added **SASS** and **LESS** stylesheet extension option.
 
 <a name="0.0.1"></a>
 ## [0.0.1](#) (2018-12-02)
