@@ -77,7 +77,7 @@ The extension of generated component file. e.g.: ComponentName.(`extension`)
 #### `ACReactComponentGenerator.styleFile.create` (default: `true`)
 Weather to generate component's stylesheet file or not.
 
-#### `ACReactComponentGenerator.styleFile.extension` (default: `jsx`)
+#### `ACReactComponentGenerator.styleFile.extension` (default: `js`)
 The extension of generated stylesheet file. e.g.: ComponentName.styles.(`extension`)
 
 #### `ACReactComponentGenerator.styleFile.suffix` (default: `.styles`)
