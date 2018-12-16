@@ -78,7 +78,7 @@
         "ACReactComponentGenerator.mainFile.create": {
           "type": "boolean",
           "default": true,
-          "description": "Weather to generate component's main file or not. e.g.: ComponentName.(extension)"
+          "description": "Whether to generate component's main file or not. e.g.: ComponentName.(extension)"
         },
         "ACReactComponentGenerator.mainFile.extension": {
           "type": "string",
@@ -88,7 +88,7 @@
         "ACReactComponentGenerator.styleFile.create": {
           "type": "boolean",
           "default": true,
-          "description": "Weather to generate component's style file or not. e.g.: ComponentName.(extension)"
+          "description": "Whether to generate component's style file or not. e.g.: ComponentName.(extension)"
         },
         "ACReactComponentGenerator.styleFile.type": {
           "type": "string",
@@ -97,6 +97,7 @@
             "emotion (.js)",
             "standard (.css)",
             "sass (.sass)",
+            "sass (.scss)",
             "less (.less)"
           ],
           "default": "styled-components (.js)",
@@ -111,7 +112,7 @@
         "ACReactComponentGenerator.indexFile.create": {
           "type": "boolean",
           "default": true,
-          "description": "Weather to generate component's index file or not. e.g.: index.(extension)"
+          "description": "Whether to generate component's index file or not. e.g.: index.(extension)"
         },
         "ACReactComponentGenerator.indexFile.extension": {
           "type": "string",
