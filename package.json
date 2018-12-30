@@ -2,7 +2,7 @@
   "name": "vscode-react-component-generator",
   "displayName": "VSCode React Component Generator",
   "description": "Generates React component files automatically",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "publisher": "abdullahceylan",
   "author": {
     "name": "Abdullah Ceylan",

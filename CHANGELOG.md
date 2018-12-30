@@ -1,3 +1,10 @@
+<a name="0.0.3"></a>
+## [0.0.3](https://github.com/abdullahceylan/vscode-react-component-generator/compare/0.0.2...0.0.3) (2018-12-30)
+
+### Updates
+* Added .scss CSS file extension support for the stylesheet extension option. (Thanks to Mark Casias)
+* Fixed some typos. (Thanks to Mark Casias)
+  
 <a name="0.0.2"></a>
 ## [0.0.2](https://github.com/abdullahceylan/vscode-react-component-generator/compare/0.0.1...0.0.2) (2018-12-09)
 
