@@ -15,7 +15,7 @@ The extension automatically creates folder for react component containing :
 - `ComponentName.jsx`
 - `ComponentName.styles.js` (for `styled`-component or `emotion` option)
 - `ComponentName.css` (for `standard` style option)
-- `ComponentName.sass` (for `sass` style option)
+- `ComponentName.scss` (for `sass` style option)
 - `ComponentName.less` (for `less` style option)
 
 ## Installation
@@ -78,7 +78,7 @@ Whether to generate component's index file or not.
 
 The extension of generated component index file. e.g.: index.(`extension`)
 
-#### `ACReactComponentGenerator.mainFile.create` (default: `true`)
+### `ACReactComponentGenerator.mainFile.create` (default: `true`)
 
 Whether to generate component's main file or not.
 
@@ -86,7 +86,7 @@ Whether to generate component's main file or not.
 
 The extension of generated component file. e.g.: ComponentName.(`extension`)
 
-#### `ACReactComponentGenerator.styleFile.create` (default: `true`)
+### `ACReactComponentGenerator.styleFile.create` (default: `true`)
 
 Whether to generate component's stylesheet file or not.
 
@@ -105,7 +105,7 @@ The type of stylesheet file to create. Valid options:
 - "styled-components (.js)" - ComponentName.styles.`js`
 - "emotion (.js)" - ComponentName.styles.`js`
 - "standard (.css)" - ComponentName.styles.`css`
-- "sass (.sass)" - ComponentName.styles.`sass`
+- "sass (.scss)" - ComponentName.styles.`sass`
 - "less (.less)" - ComponentName.styles.`less`
 
 ## Changelog
