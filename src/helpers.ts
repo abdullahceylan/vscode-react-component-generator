@@ -73,7 +73,7 @@ export class FileHelper {
     public static createIndexFile(componentDir: string, componentName: string): Observable<string> {
       const globalConfig: GlobalInterface = getConfig().get('global');
       const indexConfig: IndexInterface = getConfig().get('indexFile');
-  
+
       let templateFileName = this.assetRootDir + '/templates/index.template';
         if (indexConfig.template) {
             templateFileName = this.resolveWorkspaceRoot(indexConfig.template);
@@ -137,8 +137,6 @@ export function logger(type: 'success'|'warning'|'error', msg: string = '') {
     }
   }
 
-
-
 export default function getConfig(uri?: Uri) {
     return workspace.getConfiguration('ACReactComponentGenerator', uri) as any;
 }
@@ -150,8 +148,8 @@ export function getStyleSheetExtTemplate() {
     template: 'css.template',
   };
 
-	switch (configuredView) {
-		case 'styled-components (.js)':
+  switch (configuredView) {
+    case 'styled-components (.js)':
       styleTemplate = { ext: 'js', template: 'css-styled.template' };
       break;
     case 'emotion (.js)':
@@ -160,11 +158,14 @@ export function getStyleSheetExtTemplate() {
     case 'sass (.sass)':
       styleTemplate.ext = 'sass';
       break;
+    case 'sass (.scss)':
+      styleTemplate.ext = 'scss';
+      break;
     case 'less (.less)':
       styleTemplate.ext = 'less';
       break;
   }
-  
+
   return styleTemplate;
 }
 
