@@ -136,6 +136,7 @@ export class FileHelper {
   ): Observable<string> {
     const globalConfig: GlobalInterface = getConfig().get("global");
     const indexConfig: IndexInterface = getConfig().get("indexFile");
+    const componentConfig: ComponentInterface = getConfig().get("mainFile");
 
     let templateFileName =
       this.assetRootDir + "/templates/component-typescript-remix.template";
@@ -152,7 +153,7 @@ export class FileHelper {
 
     const filename = `${componentDir.path}/app.${dotCase(
       compName
-    )}.${this.getExtension(indexConfig.extension)}`;
+    )}.${this.getExtension(componentConfig.extension)}`;
     if (indexConfig.create) {
       return this.createFile(filename, templateContent).map(
         (result) => filename

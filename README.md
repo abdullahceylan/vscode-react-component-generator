@@ -6,7 +6,6 @@ The extension helps you to create a React component with one-click. There are al
 [![Installs](https://vsmarketplacebadges.dev/installs-short/abdullahceylan.vscode-react-component-generator.png)](https://marketplace.visualstudio.com/items?itemName=abdullahceylan.vscode-react-component-generator)
 [![Installs](https://vsmarketplacebadges.dev/rating-star/abdullahceylan.vscode-react-component-generator.png)](https://marketplace.visualstudio.com/items?itemName=abdullahceylan.vscode-react-component-generator)
 [![The MIT License](https://flat.badgen.net/badge/license/MIT/orange)](http://opensource.org/licenses/MIT)
-[![GitHub](https://flat.badgen.net/github/release/abdullahceylan/vscode-react-component-generator)](https://github.com/abdullahceylan/vscode-react-component-generator/releases)
 
 ## Other Versions
 [Please click here for React Native version](https://marketplace.visualstudio.com/items?itemName=abdullahceylan.vscode-react-native-component-generator)
@@ -53,16 +52,12 @@ ext install abdullahceylan.vscode-react-component-generator
 
 ### Creating a React Component
 
-https://github.com/user-attachments/assets/eb2f1b2a-4c5a-42f6-ab37-e5cb47aeafa7
+![Classic React Component](assets/images/ac-vscode-classic-component.gif)
 
 ### Creating a TypeScript React Component, Remix TypeScript Component and React TypeScript Route Component
 
-https://github.com/user-attachments/assets/6647ff1e-7002-4302-b27c-a293af95463e
+![TypeScript and Remix Component](assets/images/ac-vscode-typescript-remix.gif)
 
-
-![Classic React Component](assets/images/vscode-2.gif)
-
-![TypeScript and Remix Component](assets/images/vscode-3.gif)
 
 ![Extension settings](assets/images/vscode-settings.png)
 
