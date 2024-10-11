@@ -1,7 +1,10 @@
 import { useEffect } from 'react';
-import PropTypes from {quotes}prop-types{quotes};
 
-const {componentName} = () => {
+interface I{componentName} {
+  test: string
+}
+
+const {componentName} = ({ test }: I{componentName}) => {
 
   useEffect(() => {
     console.log(`{componentName} mounted`)
@@ -13,13 +16,5 @@ const {componentName} = () => {
     </div>
   )
 }
-
-{componentName}.propTypes = {
-  // bla: PropTypes.string,
-};
-
-{componentName}.defaultProps = {
-  // bla: 'test',
-};
 
 export default {componentName};

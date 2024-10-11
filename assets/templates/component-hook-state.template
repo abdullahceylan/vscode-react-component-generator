@@ -1,0 +1,44 @@
+import { useState, useEffect } from {quotes}react{quotes};
+import PropTypes from {quotes}prop-types{quotes};
+//import { Test } from {quotes}./{componentName}.styles{quotes};
+
+const {componentName} = props => { 
+  const [state, setState] = useState(null);
+  const [hasError, setHasError] = useState(false);
+
+  // on mount
+  useEffect(() => {
+    console.log('component has mounted')
+
+    // component will unmount
+    return () => {
+      // your code to be run after unmount
+    }
+  }, []);
+
+  // on hasError state update
+  useEffect(() => {
+    if (hasError) {
+      console.log('An error occured');
+    }
+  }, [hasError])
+
+  if (hasError) {
+    return <h1>Something went wrong.</h1>;
+  }
+  return (
+    <div className="{componentName}-component">
+      Test content
+    </div>
+  );
+}
+
+{componentName}.propTypes = {
+  // bla: PropTypes.string,
+};
+
+{componentName}.defaultProps = {
+  // bla: 'test',
+};
+
+export default {componentName};

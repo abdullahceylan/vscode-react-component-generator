@@ -1,3 +1,15 @@
+<a name="0.0.4"></a>
+## [0.0.4](https://github.com/abdullahceylan/vscode-react-component-generator/compare/0.0.3...0.0.4) (2024-10-11)
+
+### Updates
+* Updated the classic React component templates
+* Removed container component templates
+* Added TypeScript component creation
+* Added TypeScript Remix component creation
+* Added TypeScript Remix route component creation
+* Added CSS Module prefix support for the stylesheet extension option.
+* 
+  
 <a name="0.0.3"></a>
 ## [0.0.3](https://github.com/abdullahceylan/vscode-react-component-generator/compare/0.0.2...0.0.3) (2018-12-30)
 

@@ -2,7 +2,7 @@
   "name": "vscode-react-component-generator",
   "displayName": "VSCode React Component Generator",
   "description": "Generates React component files automatically",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "publisher": "abdullahceylan",
   "author": {
     "name": "Abdullah Ceylan",
@@ -10,8 +10,8 @@
   },
   "homepage": "https://github.com/abdullahceylan/vscode-react-component-generator",
   "galleryBanner": {
-      "color": "#0273D4",
-      "theme": "dark"
+    "color": "#0273D4",
+    "theme": "dark"
   },
   "repository": {
     "type": "git",
@@ -40,10 +40,11 @@
     "typescript"
   ],
   "activationEvents": [
-    "onCommand:extension.genReactContainerComponentFiles",
     "onCommand:extension.genReactStatelessComponentFiles",
-    "onCommand:extension.genReactReduxContainerComponentFiles",
-    "onCommand:extension.genReactReduxStatelessComponentFiles"
+    "onCommand:extension.genReactReduxStatelessComponentFiles",
+    "onCommand:extension.genReactTypeScriptComponentFiles",
+    "onCommand:extension.genReactTypeScriptRemixComponentFiles",
+    "onCommand:extension.genReactTypeScriptRemixRouteComponentFiles"
   ],
   "main": "./out/src/extension",
   "icon": "assets/images/icon.png",
@@ -68,12 +69,12 @@
         },
         "ACReactComponentGenerator.global.lifecycleType": {
           "type": "string",
-          "default": "legacy",
+          "default": "reactv16",
           "enum": [
             "legacy",
             "reactv16"
           ],
-          "description": "The lifecycle type of generated component. `legacy` is contains componentWillReceiveProps, componentWillMount etc."
+          "description": "The lifecycle type of generated component. `legacy` contains componentWillReceiveProps, componentWillMount etc."
         },
         "ACReactComponentGenerator.mainFile.create": {
           "type": "boolean",
@@ -82,7 +83,11 @@
         },
         "ACReactComponentGenerator.mainFile.extension": {
           "type": "string",
-          "default": "jsx",
+          "enum": [
+            "TypeScript (.tsx)",
+            "JSX (.jsx)"
+          ],
+          "default": "TypeScript (.tsx)",
           "description": "The extension of generated component file"
         },
         "ACReactComponentGenerator.styleFile.create": {
@@ -93,21 +98,24 @@
         "ACReactComponentGenerator.styleFile.type": {
           "type": "string",
           "enum": [
-            "styled-components (.js)",
-            "emotion (.js)",
             "standard (.css)",
+            "styled-components/emotion (.js)",
             "sass (.sass)",
             "sass (.scss)",
             "less (.less)"
           ],
-          "default": "styled-components (.js)",
+          "default": "standard (.css)",
           "description": "The type of stylesheet file to create"
         },
-
         "ACReactComponentGenerator.styleFile.suffix": {
           "type": "string",
-          "default": ".styles",
-          "description": "The suffix to add to the end of the stylesheet filename. Default: ComponentName.styles.(extension)"
+          "enum": [
+            "none",
+            ".module",
+            ".styles"
+          ],
+          "default": "none",
+          "description": "The suffix to add to the end of the stylesheet filename. Default: ComponentName.modules.(extension)"
         },
         "ACReactComponentGenerator.indexFile.create": {
           "type": "boolean",
@@ -116,45 +124,57 @@
         },
         "ACReactComponentGenerator.indexFile.extension": {
           "type": "string",
-          "default": "js",
+          "enum": [
+            "Vanilla (.js)",
+            "TypeScript (.ts)"
+          ],
+          "default": "ts",
           "description": "The extension of generated component index file"
         }
       }
     },
     "commands": [
       {
-        "command": "extension.genReactContainerComponentFiles",
-        "title": "New React Container Component"
-      },
-      {
         "command": "extension.genReactStatelessComponentFiles",
         "title": "New React Stateless Component"
       },
       {
-        "command": "extension.genReactReduxContainerComponentFiles",
-        "title": "New React Container Component with Redux"
-      },
-      {
         "command": "extension.genReactReduxStatelessComponentFiles",
         "title": "New React Stateless Component with Redux"
+      },
+      {
+        "command": "extension.genReactTypeScriptComponentFiles",
+        "title": "New React TypeScript Component"
+      },
+      {
+        "command": "extension.genReactTypeScriptRemixComponentFiles",
+        "title": "New React TypeScript Remix Component"
+      },
+      {
+        "command": "extension.genReactTypeScriptRemixRouteComponentFiles",
+        "title": "New React TypeScript Remix Route Component"
       }
     ],
     "menus": {
       "explorer/context": [
         {
-          "command": "extension.genReactContainerComponentFiles",
-          "group": "navigation"
-        },
-        {
           "command": "extension.genReactStatelessComponentFiles",
           "group": "navigation"
         },
         {
-          "command": "extension.genReactReduxContainerComponentFiles",
+          "command": "extension.genReactReduxStatelessComponentFiles",
           "group": "navigation"
         },
         {
-          "command": "extension.genReactReduxStatelessComponentFiles",
+          "command": "extension.genReactTypeScriptComponentFiles",
+          "group": "navigation"
+        },
+        {
+          "command": "extension.genReactTypeScriptRemixComponentFiles",
+          "group": "navigation"
+        },
+        {
+          "command": "extension.genReactTypeScriptRemixRouteComponentFiles",
           "group": "navigation"
         }
       ]
@@ -166,19 +186,18 @@
     "postinstall": "node ./node_modules/vscode/bin/install"
   },
   "devDependencies": {
+    "@types/mocha": "^2.2.42",
+    "@types/node": "^22.7.5",
+    "eslint": "^9.12.0",
     "mocha": "^2.3.3",
-    "typescript": "^2.6.1",
-    "vscode": "^1.1.21",
-    "eslint": "^4.11.0",
-    "@types/node": "^8.10.25",
-    "@types/mocha": "^2.2.42"
-
+    "typescript": "^5.6.3",
+    "vscode": "^1.1.37"
   },
   "dependencies": {
     "change-case": "^3.0.2",
     "fs": "^0.0.1-security",
-    "fs-extra": "^0.30.0",
-    "rxjs": "^5.0.0-rc.1",
-    "lodash": "^4.17.11"
+    "fs-extra": "^11.2.0",
+    "lodash": "^4.17.11",
+    "rxjs": "^5.0.0-rc.1"
   }
 }

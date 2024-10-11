@@ -1,0 +1,27 @@
+import { json } from '@remix-run/node';
+import type { LoaderFunctionArgs, ActionFunctionArgs } from '@remix-run/node';
+import { useLoaderData } from '@remix-run/react';
+
+export async function loader({ request }: LoaderFunctionArgs) {
+  return { dummyProp: 'test' }
+};
+
+export async function action({ request }: ActionFunctionArgs) {
+  return json({ status: 200 })
+};
+
+interface I{componentName} {
+  test: string
+}
+
+const {componentName} = ({ test }: I{componentName}) => {
+  const { dummyProp } = useLoaderData<typeof loader>();
+  
+  return (
+    <div className="{componentName}-component">
+      Test content
+    </div>
+  );
+}
+
+export default {componentName};
